@@ -27,7 +27,34 @@ body {
 }
 
 @layer utilities {
+  @layer responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .input-primary {
+    @apply mb-3 w-full rounded-md h-12 bg-gray-100 text-black px-2 placeholder-transparent focus:outline-none;
+    /* add peer with this  */
+  }
+
+  .label-primary {
+    @apply absolute left-1 w-fit -top-2 text-xs text-blue-400 mx-1 bg-white transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9E9D9D] peer-placeholder-shown:top-3 peer-placeholder-shown:left-1 peer-placeholder-shown:bg-transparent peer-focus:-top-2  peer-focus:text-xs peer-focus:text-blue-400 peer-focus:bg-white peer-focus:rounded-md peer-focus:w-fit peer-focus:pt-0.5 peer-focus:px-1;
+  }
+
+  .hvr-grow {
+    @apply transition ease-in-out delay-150 bg-orange-500 hover:-translate-y-1 hover:scale-110 hover:bg-orange-600 duration-100;
   }
 }
